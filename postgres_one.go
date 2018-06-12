@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 
+	"github.com/google/uuid"
+
 	_ "github.com/google/uuid"
 	_ "github.com/lib/pq"
 )
@@ -11,7 +13,8 @@ import (
 type user struct {
 	username string
 	password string
-	indent   []byte
+	//indent   []byte
+	ident uuid.UUID
 }
 
 var db *sql.DB
@@ -19,6 +22,12 @@ var db *sql.DB
 //var tpl *template.template
 
 func main() {
+
+	//var id uuid.UUID
+
+	//id = uuid.New()
+
+	//fmt.Printf("%T\n", id)
 
 	fmt.Println("Starting...")
 
